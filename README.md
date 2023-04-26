@@ -1,42 +1,36 @@
-# -# Инициализация карты
-maps = [1,2,3,
-        4,5,6,
-        7,8,9]
-# Инициализация победных линий
-victories = [[0,1,2],
-             [3,4,5],
-             [6,7,8],
-             [0,3,6],
-             [1,4,7],
-             [2,5,8],
-             [0,4,8],
-             [2,4,6]]
-# Вывод карты на экран
-def print_maps():
-    print(maps[0], end = " ")
-    print(maps[1], end = " ")
-    print(maps[2])
+# Создание поля
 
-    print(maps[3], end = " ")
-    print(maps[4], end = " ")
-    print(maps[5])
+lines = [1,2,3,
+         4,5,6,
+         7,8,9]
 
-    print(maps[6], end = " ")
-    print(maps[7], end = " ")
-    print(maps[8])
+# Варианты победы
 
-# Сделать ход в ячейку
-def step_maps(step,symbol):
-    ind = maps.index(step)
-    maps[ind] = symbol
-# Получить текущий результат игры
+viclin = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+
+# Вывод поля
+
+def print_lines():
+    print(lines[0], end = " ")
+    print(lines[1], end = " ")
+    print(lines[2])
+
+    print(lines[3], end = " ")
+    print(lines[4], end = " ")
+    print(lines[5])
+
+    print(lines[6], end = " ")
+    print(lines[7], end = " ")
+    print(lines[8])
+
+# Ход в ячейку
+
+def step_lines(mapr,sym):
+    ind = lines.index(mapr)
+    lines[ind] = sym
+    
+# Результат игры
+
 def get_result():
     win = ""
 
-    for i in victories:
-        if maps[i[0]] == "X" and maps[i[1]] == "X" and maps[i[2]] == "X":
-            win = "X"
-        if maps[i[0]] == "0" and maps[i[1]] == "0" and maps[i[2]] == "0":
-            win = "0"
-
-    return win

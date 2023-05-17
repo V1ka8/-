@@ -10,7 +10,6 @@ def inter_view():
         print("|", view[0 + a * 3], "|", view[1 + a * 3], "|", view[2 + a * 3], "|")
     print("-" * 13)
 
-
     
 def lin_inter(take):
     while True:

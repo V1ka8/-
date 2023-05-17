@@ -20,4 +20,34 @@ def lin_inter(take):
             print('Занято')
             continue
         view[line - 1] = take
+break
+def result_win():
+    for b in result_win:
+        if (view[b[0]-1]) == (view[b[1]-1]) == (view[b[2]-1]):
+           return view[b[1] - 1]
+        else:
+            return False
+                
+
+def bik():
+    value = 0
+    while True:
+        inter_view()
+        if value % 2 == 0:
+            lin_inter('X')
+        else:
+            lin_inter('0')
+        if value > 3:
+            win = result_win()
+            if win:
+                inter_view()
+                print(win, 'Победил')
+                break
+        value += 1
+        if value > 8:
+            inter_view()
+            print('Никто не победил')
+            break
+        
+bik()
 

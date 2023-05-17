@@ -1,36 +1,23 @@
-# Создание поля
+view = list(range(1, 10))
 
-lines = [1,2,3,
-         4,5,6,
-         7,8,9]
+victory_lines = [(1,2,3),(4,5,6),(7,8,9),(3,5,7),(1,5,9),(1,4,7),(2,5,8),(3,6,9)]
 
-# Варианты победы
 
-viclin = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
 
-# Вывод поля
+def inter_view():
+    print("-" * 13)
+    for a in range(3):
+        print("|", view[0 + a * 3], "|", view[1 + a * 3], "|", view[2 + a * 3], "|")
+    print("-" * 13)
 
-def print_lines():
-    print(lines[0], end = " ")
-    print(lines[1], end = " ")
-    print(lines[2])
 
-    print(lines[3], end = " ")
-    print(lines[4], end = " ")
-    print(lines[5])
-
-    print(lines[6], end = " ")
-    print(lines[7], end = " ")
-    print(lines[8])
-
-# Ход в ячейку
-
-def step_lines(mapr,sym):
-    ind = lines.index(mapr)
-    lines[ind] = sym
     
-# Результат игры
-
-def get_result():
-    win = ""
+def lin_inter(take):
+    while True:
+        line = inter('Делаем ход ' + take)
+        line = int(line)
+        if str(view[line - 1]) in 'X0':
+            print('Занято')
+            continue
+        view[line - 1] = take
 
